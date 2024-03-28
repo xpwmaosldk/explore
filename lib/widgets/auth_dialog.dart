@@ -233,64 +233,64 @@ class _AuthDialogState extends State<AuthDialog> {
                           width: double.maxFinite,
                           child: TextButton(
                             style: TextButton.styleFrom(
-                              primary: Colors.blueGrey.shade800,
+                              backgroundColor: Colors.blueGrey.shade800,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15.0),
                               ),
                             ),
                             onPressed: () async {
-                              setState(() {
-                                _isLoggingIn = true;
-                                textFocusNodeEmail.unfocus();
-                                textFocusNodePassword.unfocus();
-                              });
-                              if (_validateEmail(textControllerEmail.text) ==
-                                      null &&
-                                  _validatePassword(
-                                          textControllerPassword.text) ==
-                                      null) {
-                                await signInWithEmailPassword(
-                                        textControllerEmail.text,
-                                        textControllerPassword.text)
-                                    .then((result) {
-                                  if (result != null) {
-                                    print(result);
-                                    setState(() {
-                                      loginStatus =
-                                          'You have successfully logged in';
-                                      loginStringColor = Colors.green;
-                                    });
-                                    Future.delayed(Duration(milliseconds: 500),
-                                        () {
-                                      Navigator.of(context).pop();
-                                      Navigator.of(context)
-                                          .pushReplacement(MaterialPageRoute(
-                                        fullscreenDialog: true,
-                                        builder: (context) => HomePage(),
-                                      ));
-                                    });
-                                  }
-                                }).catchError((error) {
-                                  print('Login Error: $error');
-                                  setState(() {
-                                    loginStatus =
-                                        'Error occured while logging in';
-                                    loginStringColor = Colors.red;
-                                  });
-                                });
-                              } else {
-                                setState(() {
-                                  loginStatus = 'Please enter email & password';
-                                  loginStringColor = Colors.red;
-                                });
-                              }
-                              setState(() {
-                                _isLoggingIn = false;
-                                textControllerEmail.text = '';
-                                textControllerPassword.text = '';
-                                _isEditingEmail = false;
-                                _isEditingPassword = false;
-                              });
+                              // setState(() {
+                              //   _isLoggingIn = true;
+                              //   textFocusNodeEmail.unfocus();
+                              //   textFocusNodePassword.unfocus();
+                              // });
+                              // if (_validateEmail(textControllerEmail.text) ==
+                              //         null &&
+                              //     _validatePassword(
+                              //             textControllerPassword.text) ==
+                              //         null) {
+                              //   await signInWithEmailPassword(
+                              //           textControllerEmail.text,
+                              //           textControllerPassword.text)
+                              //       .then((result) {
+                              //     if (result != null) {
+                              //       print(result);
+                              //       setState(() {
+                              //         loginStatus =
+                              //             'You have successfully logged in';
+                              //         loginStringColor = Colors.green;
+                              //       });
+                              //       Future.delayed(Duration(milliseconds: 500),
+                              //           () {
+                              //         Navigator.of(context).pop();
+                              //         Navigator.of(context)
+                              //             .pushReplacement(MaterialPageRoute(
+                              //           fullscreenDialog: true,
+                              //           builder: (context) => HomePage(),
+                              //         ));
+                              //       });
+                              //     }
+                              //   }).catchError((error) {
+                              //     print('Login Error: $error');
+                              //     setState(() {
+                              //       loginStatus =
+                              //           'Error occured while logging in';
+                              //       loginStringColor = Colors.red;
+                              //     });
+                              //   });
+                              // } else {
+                              //   setState(() {
+                              //     loginStatus = 'Please enter email & password';
+                              //     loginStringColor = Colors.red;
+                              //   });
+                              // }
+                              // setState(() {
+                              //   _isLoggingIn = false;
+                              //   textControllerEmail.text = '';
+                              //   textControllerPassword.text = '';
+                              //   _isEditingEmail = false;
+                              //   _isEditingPassword = false;
+                              // });
                             },
                             child: Padding(
                               padding: EdgeInsets.only(
@@ -327,39 +327,39 @@ class _AuthDialogState extends State<AuthDialog> {
                           width: double.maxFinite,
                           child: TextButton(
                             style: TextButton.styleFrom(
-                              primary: Colors.blueGrey.shade800,
+                              backgroundColor: Colors.blueGrey.shade800,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15),
                               ),
                             ),
                             onPressed: () async {
-                              setState(() {
-                                _isRegistering = true;
-                              });
-                              await registerWithEmailPassword(
-                                      textControllerEmail.text,
-                                      textControllerPassword.text)
-                                  .then((result) {
-                                if (result != null) {
-                                  setState(() {
-                                    loginStatus =
-                                        'You have registered successfully';
-                                    loginStringColor = Colors.green;
-                                  });
-                                  print(result);
-                                }
-                              }).catchError((error) {
-                                print('Registration Error: $error');
-                                setState(() {
-                                  loginStatus =
-                                      'Error occured while registering';
-                                  loginStringColor = Colors.red;
-                                });
-                              });
+                              // setState(() {
+                              //   _isRegistering = true;
+                              // });
+                              // await registerWithEmailPassword(
+                              //         textControllerEmail.text,
+                              //         textControllerPassword.text)
+                              //     .then((result) {
+                              //   if (result != null) {
+                              //     setState(() {
+                              //       loginStatus =
+                              //           'You have registered successfully';
+                              //       loginStringColor = Colors.green;
+                              //     });
+                              //     print(result);
+                              //   }
+                              // }).catchError((error) {
+                              //   print('Registration Error: $error');
+                              //   setState(() {
+                              //     loginStatus =
+                              //         'Error occured while registering';
+                              //     loginStringColor = Colors.red;
+                              //   });
+                              // });
 
-                              setState(() {
-                                _isRegistering = false;
-                              });
+                              // setState(() {
+                              //   _isRegistering = false;
+                              // });
                             },
                             child: Padding(
                               padding: EdgeInsets.only(

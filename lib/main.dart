@@ -20,9 +20,9 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Future getUserInfo() async {
-    await getUser();
-    setState(() {});
-    print(uid);
+    // await getUser();
+    // setState(() {});
+    // print(uid);
   }
 
   @override

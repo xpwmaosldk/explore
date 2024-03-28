@@ -8,7 +8,7 @@ class BottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(30),
-      color: Theme.of(context).bottomAppBarColor,
+      color: Theme.of(context).bottomAppBarTheme.color,
       child: ResponsiveWidget.isSmallScreen(context)
           ? Column(
               children: [
@@ -44,12 +44,12 @@ class BottomBar extends StatelessWidget {
                 SizedBox(height: 20),
                 InfoText(
                   type: 'Email',
-                  text: 'explore@gmail.com',
+                  text: 'xpwmaosldk@gmail.com',
                 ),
                 SizedBox(height: 5),
                 InfoText(
                   type: 'Address',
-                  text: '128, Trymore Road, Delft, MN - 56124',
+                  text: '**** **** **** ****',
                 ),
                 SizedBox(height: 20),
                 Container(
@@ -101,12 +101,12 @@ class BottomBar extends StatelessWidget {
                       children: [
                         InfoText(
                           type: 'Email',
-                          text: 'explore@gmail.com',
+                          text: 'xpwmaosldk@gmail.com',
                         ),
                         SizedBox(height: 5),
                         InfoText(
                           type: 'Address',
-                          text: '128, Trymore Road, Delft, MN - 56124',
+                          text: '**** **** **** ****',
                         )
                       ],
                     ),

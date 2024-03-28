@@ -22,7 +22,7 @@ class _GoogleButtonState extends State<GoogleButton> {
       ),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          primary: Colors.blueGrey.shade100,
+          backgroundColor: Colors.blueGrey.shade100,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
             side: BorderSide(color: Colors.blueGrey, width: 3),
@@ -30,26 +30,26 @@ class _GoogleButtonState extends State<GoogleButton> {
           elevation: 0,
         ),
         onPressed: () async {
-          setState(() {
-            _isProcessing = true;
-          });
-          await signInWithGoogle().then((result) {
-            print(result);
-            if (result != null) {
-              Navigator.of(context).pop();
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  fullscreenDialog: true,
-                  builder: (context) => HomePage(),
-                ),
-              );
-            }
-          }).catchError((error) {
-            print('Registration Error: $error');
-          });
-          setState(() {
-            _isProcessing = false;
-          });
+          // setState(() {
+          //   _isProcessing = true;
+          // });
+          // await signInWithGoogle().then((result) {
+          //   print(result);
+          //   if (result != null) {
+          //     Navigator.of(context).pop();
+          //     Navigator.of(context).pushReplacement(
+          //       MaterialPageRoute(
+          //         fullscreenDialog: true,
+          //         builder: (context) => HomePage(),
+          //       ),
+          //     );
+          //   }
+          // }).catchError((error) {
+          //   print('Registration Error: $error');
+          // });
+          // setState(() {
+          //   _isProcessing = false;
+          // });
         },
         child: Padding(
           padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
